@@ -144,6 +144,11 @@
             padding: 18px;
             margin-top: 15px;
         }
+        .status-box:has(.badge.Approved) {
+
+            border-color: #28a745;
+            border-width: 2px;
+        }
 
         .status-box p {
             margin: 6px 0;
@@ -429,8 +434,7 @@
         const note = document.createElement("div");
         note.className = "live-note";
         note.id = "liveNote";
-        note.innerHTML = `Live updates on — checking for admin decisions every 15 seconds.`;
-        statusResult.appendChild(note);
+        note.innerHTML = `Live updates on — checking for admin decisions every 15 seconds. Last checked: ${new Date().toLocaleTimeString()}`;        statusResult.appendChild(note);
     }
 
     function stopPolling() {
