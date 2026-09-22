@@ -386,7 +386,7 @@
     function startPolling(studentId) {
         stopPolling();
         pollTimer = setInterval(() => fetchStatus(studentId, { silent: true }), POLL_INTERVAL_MS);
-        document.getElementById("autoRefreshBtn").textContent = "Turn off live updates";
+        document.getElementById("autoRefreshBtn").textContent = "Stop checking";
         const statusResult = document.getElementById("statusResult");
         const note = document.createElement("div");
         note.className = "live-note";
@@ -401,7 +401,7 @@
             pollTimer = null;
         }
         const btn = document.getElementById("autoRefreshBtn");
-        if (btn) btn.textContent = "Turn on live updates";
+        if (btn) btn.textContent = "Check for updates automatically";
         const note = document.getElementById("liveNote");
         if (note) note.remove();
     }
